@@ -59,7 +59,7 @@ public class Reservation {
     }
 
     public void setStatus(String status) {
-        status = status;
+        this.status = status;
     }
 
     public Tool getTool() {
