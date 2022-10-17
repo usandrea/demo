@@ -1,6 +1,7 @@
 package com.example.demo.Controller;
 
 import com.example.demo.modelo.Category;
+import com.example.demo.modelo.Tool;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -31,4 +32,12 @@ public class CategoryController {
     public Category save (@RequestBody Category category) {
     return categoryService.save(category);
     }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Category update(@RequestBody Category category) {return categoryService.update(category);
+    }
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){return categoryService.delete(id);}
 }
